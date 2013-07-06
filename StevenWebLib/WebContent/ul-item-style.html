@@ -1,0 +1,46 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>使用CSS的列表实现导航条的功能</title>
+<!-- 例子参考：CSS Web设计高级教程（第2版） -->
+
+
+<style type="text/css">
+ul#nav,ul#nav li {
+	float: left;
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+
+ul#nav {
+	font-family: Verdana, Geneva, Helvetica, sans-serif;
+	font-size: .82em;
+	background-color: #DDD;
+}
+
+ul#nav li a {
+	border-color: #000;
+	border-width: 1px 1px 1px 0;
+	border-style: solid;
+	display: block;
+	float: left;
+	padding: 3px;
+}
+
+ul#nav li.first a {
+	border-width: 1px;
+}
+</style>
+</head>
+<body>
+
+	<ul id="nav">
+		<li class="first"><a href="">Home</a></li>
+		<li><a href="">About Us</a></li>
+		<li><a href="">Our Products</a></li>
+	</ul>
+
+</body>
+</html>
