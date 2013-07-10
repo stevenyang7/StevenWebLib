@@ -1,0 +1,63 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>float学习</title>
+
+<style type="text/css">
+<!--
+.container {
+	border: 1px solid #BAB9B8;
+	width: 800px;
+	overflow: hidden;
+	margin-bottom: 20px;
+}
+
+.box {
+	background: #FFFCC4;
+	border: 1px dotted #BAB9B8;
+	width: 200px;
+	height: 100px;
+	margin: 20px;
+	position: relative;
+}
+
+.box span {
+	position: absolute;
+	bottom: 0;
+	right: 0;
+}
+
+.floatLeft {
+	float: left;
+}
+
+.floatRight {
+	float: right;
+}
+-->
+</style>
+
+</head>
+<body>
+	<!--  浮动元素脱离文档流，所以box1会覆盖box2-->
+	<p>Box 1 is being floated to the left, and is hidden under box 1.</p>
+
+	<div class="container">
+
+		<div class="floatLeft box">
+			<span>Box 1</span>
+		</div>
+
+
+		<div class="box">
+			<span>Box 2</span>
+		</div>
+
+		<div class="box">
+			<span>Box 3</span>
+		</div>
+	</div>
+
+</body>
+</html>
