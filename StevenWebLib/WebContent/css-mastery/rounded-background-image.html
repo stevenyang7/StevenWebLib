@@ -1,0 +1,47 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>多个背景图像构成的圆角框</title>
+
+
+<style type="text/css">
+
+/* Pretty */
+.box {
+	width: 30em;
+	background: #89ac11 url(img/mtop-left.gif) left top no-repeat;
+	color: #fff;
+	padding: 2em 2em 1em 2em;
+	margin-top: 2em;
+}
+
+h2 {
+	margin-top: 0;
+	font-size: 1.6em;
+}
+
+/* Example */
+.box {
+	background-image: url(img/mtop-left.gif), url(img/mtop-right.gif),
+		url(img/mbottom-left.gif), url(img/mbottom-right.gif);
+	background-repeat: no-repeat, no-repeat, no-repeat, no-repeat;
+	background-position: top left, top right, bottom left, bottom right;
+}
+</style>
+
+</head>
+<body>
+
+	<div class="box">
+		<h2>My Rounded Corner Box</h2>
+		<p>This is my rounded corner box. Isn't it spiffing! I think it's
+			the best rounded corner box in the world. I mean, look at those
+			corners. How round are they? Now take a look at the mark-up. That's
+			right, no extraneous div's. Just pure HTML goodness. Sexy huh? I bet
+			you're wondering how I did that? Well it's easy with CSS 3. You
+			simply use multiple background images.</p>
+	</div>
+
+</body>
+</html>
