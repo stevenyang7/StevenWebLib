@@ -1,0 +1,53 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>用少量代码实现丰富的功能</title>
+<!-- JQuery只需要一行代码就能够实现获取单选按钮值的功能 -->
+
+<style type="text/css">
+#result tt {
+	color: red;
+	font-size: 2em;
+}
+
+form>div {
+	margin-top: 0.9em;
+}
+</style>
+
+<script type="text/javascript" src="../../js/jquery-1.8.3.js"></script>
+
+<script type="text/javascript">
+	$(function() {
+		$('#testButton').click(
+				function() {
+					var checkedValue = $(
+							'[name="someRadioGroup"]:radio:checked').val();
+					$('#result').html(
+							'The radio element with value <tt>' + checkedValue
+									+ '</tt> is checked.');
+				});
+	});
+</script>
+
+</head>
+<body>
+	<form>
+		<div>
+			<label for="radioYes">What is your answer?</label> <input
+				type="radio" name="someRadioGroup" id="radioYes" value="yes"
+				checked="checked" /> Yes <input type="radio" name="someRadioGroup"
+				id="radioNo" value="no" /> No <input type="radio"
+				name="someRadioGroup" id="radioMaybe" value="maybe" /> Maybe <input
+				type="radio" name="someRadioGroup" id="radioConfused"
+				value="confused" /> I dunno
+		</div>
+		<div>
+			<button type="button" id="testButton" >Which?</button>
+		</div>
+		<div id="result"></div>
+	</form>
+
+</body>
+</html>
