@@ -1,0 +1,61 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml%22 > 
+<head runat="server">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>在线编辑文档</title>
+<script language="javascript" type="text/javascript">
+	var __OpenDocuments = null;
+
+	function documentEdit(url) {
+		if (__OpenDocuments == null) {
+			try {
+				__OpenDocuments = new ActiveXObject(
+						"SharePoint.OpenDocuments.3"); //for office 2007 
+			} catch (e) {
+			}
+
+			if (__OpenDocuments == null
+					|| typeof (__OpenDocuments) == "undefined") {
+				try {
+					__OpenDocuments = new ActiveXObject(
+							"SharePoint.OpenDocuments.2"); //for office 2003 
+				} catch (e) {
+				}
+			}
+
+			if (__OpenDocuments == null
+					|| typeof (__OpenDocuments) == "undefined") {
+				alert("请安装Word(2003或更高版本)");
+				return;
+			}
+		}
+		var result = __OpenDocuments.EditDocument(url, "Word.Document");
+
+		if (result == false) {
+			alert("无法打开文档.");
+		}
+	}
+</script>
+</head>
+<body>
+
+	<!-- 没法用
+	<form id="form1" runat="server">
+		<div>
+			<iframe width=800 height=330 frameborder=0 scrolling=auto
+				src="1.docx"></iframe>
+		</div>
+	</form>
+	 -->
+	<!-- 
+	<form id="form1" runat="server">
+		<div>
+			<input type="button" value="打开文档"
+				onclick="documentEdit('http://localhost:8080//StevenWebLib/1.docx');return false;" />
+			<a href="#"
+				onclick="documentEdit('http://localhost:8080//StevenWebLib/1.docx');return false;">点击</a>
+		</div>
+	</form>
+	 -->
+</body>
+</html>
